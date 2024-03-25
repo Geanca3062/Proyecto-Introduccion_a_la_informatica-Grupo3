@@ -8,12 +8,12 @@ package main;
  *
  * @author gean3
  */
-public class GestionAnimales extends javax.swing.JFrame {
+public class GestionHabitats extends javax.swing.JFrame {
 
     /**
-     * Creates new form GestionAnimales
+     * Creates new form GestionHabitats
      */
-    public GestionAnimales() {
+    public GestionHabitats() {
         initComponents();
     }
 
@@ -26,14 +26,29 @@ public class GestionAnimales extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btn_buscar = new javax.swing.JButton();
-        btn_Back = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btn_aniadir = new javax.swing.JButton();
         btn_eliminar = new javax.swing.JButton();
         btn_modificar = new javax.swing.JButton();
+        btn_buscar = new javax.swing.JButton();
+        btn_Back = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setText("Zoologico Internacional - Gestion de Habitats");
+        jLabel1.setName("lvl_ZoologicoInternacional"); // NOI18N
+
+        btn_aniadir.setText("Añadir");
+        btn_aniadir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_aniadirActionPerformed(evt);
+            }
+        });
+
+        btn_eliminar.setText("Eliminar");
+
+        btn_modificar.setText("Modificar ");
 
         btn_buscar.setText("Buscar");
         btn_buscar.addActionListener(new java.awt.event.ActionListener() {
@@ -49,21 +64,6 @@ public class GestionAnimales extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setText("Zoologico Internacional - Gestion de animales");
-        jLabel1.setName("lvl_ZoologicoInternacional"); // NOI18N
-
-        btn_aniadir.setText("Añadir");
-        btn_aniadir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_aniadirActionPerformed(evt);
-            }
-        });
-
-        btn_eliminar.setText("Eliminar");
-
-        btn_modificar.setText("Modificar ");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -72,7 +72,7 @@ public class GestionAnimales extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 418, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE)
                         .addGap(144, 144, 144))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -111,19 +111,20 @@ public class GestionAnimales extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_buscarActionPerformed
 
-    private void btn_aniadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_aniadirActionPerformed
-        // TODO add your handling code here:
-        GestionAnimalesAdd add = new GestionAnimalesAdd();
-        add.main();
-        setVisible(false);
-    }//GEN-LAST:event_btn_aniadirActionPerformed
-
     private void btn_BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_BackActionPerformed
         // TODO add your handling code here:
         MainMenu menu = new MainMenu();
         menu.setVisible(true);
-        dispose(); 
+        dispose();   
     }//GEN-LAST:event_btn_BackActionPerformed
+
+    private void btn_aniadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_aniadirActionPerformed
+        // TODO add your handling code here:
+        GestionHabitatsAdd add = new GestionHabitatsAdd();
+        add.main();
+        setVisible(false);
+        
+    }//GEN-LAST:event_btn_aniadirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -142,20 +143,20 @@ public class GestionAnimales extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GestionAnimales.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GestionHabitats.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GestionAnimales.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GestionHabitats.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GestionAnimales.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GestionHabitats.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GestionAnimales.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GestionHabitats.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GestionAnimales().setVisible(true);
+                new GestionHabitats().setVisible(true);
             }
         });
     }

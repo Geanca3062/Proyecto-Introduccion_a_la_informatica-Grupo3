@@ -8,12 +8,12 @@ package main;
  *
  * @author gean3
  */
-public class Main extends javax.swing.JFrame {
+public class MainMenu extends javax.swing.JFrame {
 
     /**
      * Creates new form MainJFrame
      */
-    public Main() {
+    public MainMenu() {
         initComponents();
     }
 
@@ -44,12 +44,21 @@ public class Main extends javax.swing.JFrame {
         jLabel1.setName("lvl_ZoologicoInternacional"); // NOI18N
 
         btn_GestionarAnimales.setText("Gestionar animales");
-        btn_GestionarAnimales.setActionCommand("Gestionar animales");
         btn_GestionarAnimales.setName("btn_GestionarAnimales"); // NOI18N
+        btn_GestionarAnimales.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_GestionarAnimalesActionPerformed(evt);
+            }
+        });
 
         btn_GestionarHabitats.setText("Gestionar Hábitats");
         btn_GestionarHabitats.setToolTipText("");
         btn_GestionarHabitats.setName("btn_GestionarHabitats"); // NOI18N
+        btn_GestionarHabitats.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_GestionarHabitatsActionPerformed(evt);
+            }
+        });
 
         btn_RegistroDeEventos.setText("Registro de Eventos");
         btn_RegistroDeEventos.setName("btn_RegistroDeEventos"); // NOI18N
@@ -105,9 +114,25 @@ public class Main extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btn_GestionarAnimalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_GestionarAnimalesActionPerformed
+        // TODO add your handling code here:
+        GestionAnimales gestionAnimales = new GestionAnimales();
+        gestionAnimales.main();
+        setVisible(false);
+        
+    }//GEN-LAST:event_btn_GestionarAnimalesActionPerformed
+
+    private void btn_GestionarHabitatsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_GestionarHabitatsActionPerformed
+        // TODO add your handling code here:
+        GestionHabitats gestionHabitats = new GestionHabitats();
+        gestionHabitats.main();
+        setVisible(false);
+    }//GEN-LAST:event_btn_GestionarHabitatsActionPerformed
+
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -122,21 +147,35 @@ public class Main extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Main().setVisible(true);
+                new MainMenu().setVisible(true);
             }
         });
     }
