@@ -65,6 +65,11 @@ public class GestionHabitatsAdd extends javax.swing.JFrame {
         });
 
         btn_Cargar.setText("Añadir");
+        btn_Cargar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_CargarActionPerformed(evt);
+            }
+        });
 
         btn_Back.setText("Volver");
         btn_Back.addActionListener(new java.awt.event.ActionListener() {
@@ -164,6 +169,10 @@ public class GestionHabitatsAdd extends javax.swing.JFrame {
         menu.setVisible(true);
         dispose();
     }//GEN-LAST:event_btn_BackActionPerformed
+
+    private void btn_CargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CargarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_CargarActionPerformed
 
     /**
      * @param args the command line arguments
