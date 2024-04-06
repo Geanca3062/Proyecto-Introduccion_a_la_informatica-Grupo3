@@ -33,6 +33,7 @@ public class MainMenu extends javax.swing.JFrame {
         btn_RegistroDeVisitantes = new javax.swing.JButton();
         btn_GestionDeAlimentacion = new javax.swing.JButton();
         btn_Mapa = new javax.swing.JButton();
+        btn_Salir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Zoologico Internacional");
@@ -72,6 +73,14 @@ public class MainMenu extends javax.swing.JFrame {
         btn_Mapa.setText("Mapa");
         btn_Mapa.setName("btn_Mapa"); // NOI18N
 
+        btn_Salir.setText("Mapa");
+        btn_Salir.setName("btn_Mapa"); // NOI18N
+        btn_Salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_SalirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -90,6 +99,10 @@ public class MainMenu extends javax.swing.JFrame {
                         .addComponent(btn_RegistroDeVisitantes, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btn_Mapa, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(109, 109, 109)
+                .addComponent(btn_Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -108,7 +121,9 @@ public class MainMenu extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_GestionDeAlimentacion, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_Mapa, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         pack();
@@ -129,6 +144,11 @@ public class MainMenu extends javax.swing.JFrame {
         setVisible(false);
     }//GEN-LAST:event_btn_GestionarHabitatsActionPerformed
 
+    private void btn_SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SalirActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_btn_SalirActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -136,6 +156,7 @@ public class MainMenu extends javax.swing.JFrame {
     public static void main(String args[]) {
         Data.AnimalesData("Elefante", "Elefante Africano", "12");
         Data.AnimalesData("Elefante", "Elefante Africano", "13");
+        Data.AnimalesData("Elefante", "Elefante Africano", "12");
         Data.AnimalesData("Elefante", "Elefante Africano", "12");
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -190,6 +211,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JButton btn_Mapa;
     private javax.swing.JButton btn_RegistroDeEventos;
     private javax.swing.JButton btn_RegistroDeVisitantes;
+    private javax.swing.JButton btn_Salir;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

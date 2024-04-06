@@ -58,5 +58,19 @@ public class Data {
         System.out.println("-----------------------");
         habitatsAdd += 1;
     }
+    
+    public static void HabitatsDataModify(String Nombre, String TipoH, String Capacidad, int ID) {
+        Habitads[ID][0] = Nombre;
+        Habitads[ID][1] = TipoH;
+        Habitads[ID][2] = Capacidad;
+
+        System.out.println(Habitads[ID][0]);
+        System.out.println(Habitads[ID][1]);
+        System.out.println(Habitads[ID][2]);
+        System.out.println(Habitads[ID][3]);
+        System.out.println(Habitads[ID][4]);
+        System.out.println("-----------------------");
+        System.out.println("-----------------------");
+    }
 
 }

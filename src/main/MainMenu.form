@@ -44,6 +44,11 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
+              <Component id="btn_Salir" min="-2" pref="203" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -66,7 +71,9 @@
                   <Component id="btn_GestionDeAlimentacion" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                   <Component id="btn_Mapa" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="28" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="btn_Salir" min="-2" pref="40" max="-2" attributes="0"/>
+              <EmptySpace pref="13" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -123,6 +130,15 @@
         <Property name="text" type="java.lang.String" value="Mapa"/>
         <Property name="name" type="java.lang.String" value="btn_Mapa" noResource="true"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btn_Salir">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Mapa"/>
+        <Property name="name" type="java.lang.String" value="btn_Mapa" noResource="true"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_SalirActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
