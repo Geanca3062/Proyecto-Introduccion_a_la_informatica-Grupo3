@@ -159,6 +159,8 @@ public class MainMenu extends javax.swing.JFrame {
         Data.AnimalesData("Elefante", "Elefante Africano", "12");
         Data.AnimalesData("Elefante", "Elefante Africano", "12");
         Data.AnimalesData("Elefante", "Elefante Africano", "2");
+        Data.AnimalesData("Elefante", "Leon", "14");
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
