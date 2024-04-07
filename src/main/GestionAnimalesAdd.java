@@ -44,7 +44,7 @@ public class GestionAnimalesAdd extends javax.swing.JFrame {
         jLabel1.setText("Zoologico Internacional - Gestion de animales [Añadir]");
         jLabel1.setName("lvl_ZoologicoInternacional"); // NOI18N
 
-        jLabel2.setText("Nombre - ID");
+        jLabel2.setText("Nombre");
 
         tf_NombreID.setToolTipText("");
 
@@ -62,6 +62,11 @@ public class GestionAnimalesAdd extends javax.swing.JFrame {
         });
 
         btn_Cargar.setText("Añadir");
+        btn_Cargar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_CargarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -122,6 +127,8 @@ public class GestionAnimalesAdd extends javax.swing.JFrame {
                 .addContainerGap(93, Short.MAX_VALUE))
         );
 
+        jLabel2.getAccessibleContext().setAccessibleName("Nombre");
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -131,6 +138,15 @@ public class GestionAnimalesAdd extends javax.swing.JFrame {
         menu.setVisible(true);
         dispose();
     }//GEN-LAST:event_btn_BackActionPerformed
+
+    private void btn_CargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CargarActionPerformed
+        // TODO add your handling code here:
+        String Nombre = tf_NombreID.getText();
+        String Especie = tf_Especie.getText();
+        String Edad = tf_Edad.getText();
+        String Habitat = tf_HabitatID.getText();
+        Data.AnimalesData(Nombre, Especie, Edad, Habitat);
+    }//GEN-LAST:event_btn_CargarActionPerformed
 
     /**
      * @param args the command line arguments

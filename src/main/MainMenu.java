@@ -154,11 +154,11 @@ public class MainMenu extends javax.swing.JFrame {
      */
     
     public static void main(String args[]) {
-        Data.DefauldDataAnimales("Elefante", "Elefante Africano", "12");
-        Data.DefauldDataAnimales("Elefante", "Elefante Africano", "13");
-        Data.DefauldDataAnimales("Elefante", "Elefante Africano", "12");
-        Data.DefauldDataAnimales("Elefante", "Elefante Africano", "12");
-        Data.DefauldDataAnimales("Elefante", "Elefante Africano", "2");
+        Data.DefauldDataAnimales("Juan", "Elefante Africano", "12");
+        Data.DefauldDataAnimales("Karla", "Elefante Africano", "13");
+        Data.DefauldDataAnimales("Miguel", "Elefante Africano", "12");
+        Data.DefauldDataAnimales("Chuco", "Elefante Africano", "12");
+        Data.DefauldDataAnimales("Paco", "Elefante Africano", "2");
         Data.DefauldDataAnimales("Elefante", "Leon", "14");
         Data.DefauldDataHabitats("Sabana1","Sabana","10","6");
         Data.DefauldDataHabitats("Sabana2","Sabana","10","0");

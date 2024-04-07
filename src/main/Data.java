@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  */
 public class Data {
 
-    static String[][] Animales = new String[100][4]; // 0)NombreID 1)Especie 2)Edad 3)AnimalID
+    static String[][] Animales = new String[100][6]; // 0)NombreID 1)Especie 2)Edad 3)Habitat 4)HabitatID 5)AnimalID
     static int animalesAdd = 0;
     static int animalesID = 0;
     static String[][] Habitads = new String[100][5]; // 0)Nombre 1)TipoDeHambiente 2)CapacidadTot 3)CapacidadAct 4)HabitatID
@@ -23,7 +23,9 @@ public class Data {
         Animales[animalesAdd][0] = Nombre;
         Animales[animalesAdd][1] = Especie;
         Animales[animalesAdd][2] = Edad;
-        Animales[animalesAdd][3] = String.valueOf(animalesID);
+        Animales[animalesAdd][3] = "Sabana1";
+        Animales[animalesAdd][4] = "0";
+        Animales[animalesAdd][5] = String.valueOf(animalesID);
         animalesAdd += 1;
         animalesID += 1;
     }
@@ -38,17 +40,37 @@ public class Data {
         habitatsID += 1;
     }
 
-    public static void AnimalesData(String Nombre, String Especie, String Edad) {
-        Animales[animalesAdd][0] = Nombre;
-        Animales[animalesAdd][1] = Especie;
-        Animales[animalesAdd][2] = Edad;
-        Animales[animalesAdd][3] = String.valueOf(animalesID);
+    public static void AnimalesData(String Nombre, String Especie, String Edad, String Habitat) {
+        for (int x = 0; x < habitatsAdd; x++) {
+            String ID = Habitads[x][4];
+            if (Habitat.equals(ID)) {// Busca el habitat con el mismo ID
+                int CantActual = Integer.parseInt(Habitads[x][3]);
+                int CantTot = Integer.parseInt(Habitads[x][2]);
+                if (CantActual >= CantTot) { //Verifica si esta lleno, si no esta lleno, carga los datos del animal
+                    JOptionPane.showMessageDialog(null, "El habitat seleccionado esta lleno");
+                } else {
+                    Animales[animalesAdd][0] = Nombre;
+                    Animales[animalesAdd][1] = Especie;
+                    Animales[animalesAdd][2] = Edad;
+                    Animales[animalesAdd][3] = Habitads[x][0]; //Nombre del habitat
+                    Animales[animalesAdd][4] = Habitads[x][4]; //ID del habitat
+                    Animales[animalesAdd][5] = String.valueOf(animalesID);
+
+                    Habitads[x][3] = String.valueOf((CantActual + 1));
+                    animalesAdd += 1;
+                    animalesID += 1;
+                }
+            }
+        }
+
         //animalesAdd += 1;
         //animalesID += 1;
-        System.out.println(Animales[animalesAdd][0]);
-        System.out.println(Animales[animalesAdd][1]);
-        System.out.println(Animales[animalesAdd][2]);
-        System.out.println(Animales[animalesAdd][3]);
+        System.out.println(Animales[animalesAdd - 1][0]);
+        System.out.println(Animales[animalesAdd - 1][1]);
+        System.out.println(Animales[animalesAdd - 1][2]);
+        System.out.println(Animales[animalesAdd - 1][3]);
+        System.out.println(Animales[animalesAdd - 1][4]);
+        System.out.println(Animales[animalesAdd - 1][5]);
         /*
         animalesAdd += 1;
         System.out.println("-----------------------");
@@ -59,9 +81,42 @@ public class Data {
          */
         System.out.println("-----------------------");
         System.out.println("-----------------------");
-        animalesAdd += 1;
-        animalesID += 1;
 
+    }
+
+    public static void AnimalesDataDelete() {
+        String deleteID = JOptionPane.showInputDialog("Ingrese el ID del animal a eliminar");
+        boolean find = false;
+        for (int x = 0; x < animalesAdd; x++) {
+            String ID = Animales[x][5]; //ID del animal
+            String HabitatID = Animales[x][4]; //ID del habitat donde esta el animal
+            if (deleteID.equals(ID)) {// Busca el habitat con el mismo ID
+                for (int y = x; y < animalesAdd; y++) {
+                    Animales[y][0] = Animales[(y + 1)][0]; //Nombre
+                    Animales[y][1] = Animales[(y + 1)][1]; // Especie
+                    Animales[y][2] = Animales[(y + 1)][2]; //Edad
+                    Animales[y][3] = Animales[(y + 1)][3]; //Habitat
+                    Animales[y][4] = Animales[(y + 1)][4]; //HabitatID
+                    Animales[y][5] = Animales[(y + 1)][5]; //AnimalID
+                    find = true;
+                }
+                x -= 1;
+                animalesAdd -= 1;
+                
+                int CantActual = Integer.parseInt(Habitads[x][3]);
+                for (int z = 0; z < habitatsAdd; z++){
+                    ID = Habitads[z][4];
+
+                    
+                    
+                }
+                //Habitads[x][3] = String.valueOf((CantActual - 1));
+                JOptionPane.showMessageDialog(null, "Datos eliminados correctamente");
+            }
+        }
+        if (find == false) {
+            JOptionPane.showMessageDialog(null, "Dato no encontrado");
+        }
     }
 
     public static void HabitatsData(String Nombre, String TipoH, String Capacidad, String CantActual) {
@@ -137,24 +192,28 @@ public class Data {
 
     public static void HabitatsDataDelete() {
         String deleteID = JOptionPane.showInputDialog("Ingrese el ID del habitat a eliminar");
+        boolean find = false;
         for (int x = 0; x < habitatsAdd; x++) {
             String ID = Habitads[x][4];
             if (deleteID.equals(ID)) {
                 for (int y = x; y < habitatsAdd; y++) {
-                    Habitads[y][0] = Habitads[(y+1)][0];
-                    Habitads[y][1] = Habitads[(y+1)][1];
-                    Habitads[y][2] = Habitads[(y+1)][2];
-                    Habitads[y][3] = Habitads[(y+1)][3];
-                    Habitads[y][4] = Habitads[(y+1)][4]; //ID
+                    Habitads[y][0] = Habitads[(y + 1)][0];
+                    Habitads[y][1] = Habitads[(y + 1)][1];
+                    Habitads[y][2] = Habitads[(y + 1)][2];
+                    Habitads[y][3] = Habitads[(y + 1)][3];
+                    Habitads[y][4] = Habitads[(y + 1)][4]; //ID
+                    find = true;
                 }
                 x -= 1;
                 habitatsAdd -= 1;
                 JOptionPane.showMessageDialog(null, "Datos eliminados correctamente");
             }
-            
 
         }
-        
+        if (find == false) {
+            JOptionPane.showMessageDialog(null, "Dato no encontrado");
+        }
+
     }
 
 }
