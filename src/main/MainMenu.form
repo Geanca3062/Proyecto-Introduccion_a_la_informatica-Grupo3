@@ -133,7 +133,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btn_Salir">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Mapa"/>
+        <Property name="text" type="java.lang.String" value="Salir"/>
         <Property name="name" type="java.lang.String" value="btn_Mapa" noResource="true"/>
       </Properties>
       <Events>

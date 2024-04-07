@@ -73,7 +73,7 @@ public class MainMenu extends javax.swing.JFrame {
         btn_Mapa.setText("Mapa");
         btn_Mapa.setName("btn_Mapa"); // NOI18N
 
-        btn_Salir.setText("Mapa");
+        btn_Salir.setText("Salir");
         btn_Salir.setName("btn_Mapa"); // NOI18N
         btn_Salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -154,12 +154,15 @@ public class MainMenu extends javax.swing.JFrame {
      */
     
     public static void main(String args[]) {
-        Data.AnimalesData("Elefante", "Elefante Africano", "12");
-        Data.AnimalesData("Elefante", "Elefante Africano", "13");
-        Data.AnimalesData("Elefante", "Elefante Africano", "12");
-        Data.AnimalesData("Elefante", "Elefante Africano", "12");
-        Data.AnimalesData("Elefante", "Elefante Africano", "2");
-        Data.AnimalesData("Elefante", "Leon", "14");
+        Data.DefauldDataAnimales("Elefante", "Elefante Africano", "12");
+        Data.DefauldDataAnimales("Elefante", "Elefante Africano", "13");
+        Data.DefauldDataAnimales("Elefante", "Elefante Africano", "12");
+        Data.DefauldDataAnimales("Elefante", "Elefante Africano", "12");
+        Data.DefauldDataAnimales("Elefante", "Elefante Africano", "2");
+        Data.DefauldDataAnimales("Elefante", "Leon", "14");
+        Data.DefauldDataHabitats("Sabana1","Sabana","10","6");
+        Data.DefauldDataHabitats("Sabana2","Sabana","10","0");
+        Data.DefauldDataHabitats("Sabana3","Sabana","10","0");
         
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

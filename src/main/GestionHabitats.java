@@ -47,6 +47,11 @@ public class GestionHabitats extends javax.swing.JFrame {
         });
 
         btn_eliminar.setText("Eliminar");
+        btn_eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_eliminarActionPerformed(evt);
+            }
+        });
 
         btn_modificar.setText("Modificar ");
         btn_modificar.addActionListener(new java.awt.event.ActionListener() {
@@ -114,6 +119,9 @@ public class GestionHabitats extends javax.swing.JFrame {
 
     private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
         // TODO add your handling code here:
+        GestionHabitatsSearch Searc = new GestionHabitatsSearch();
+        Searc.main();
+        setVisible(false);
     }//GEN-LAST:event_btn_buscarActionPerformed
 
     private void btn_BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_BackActionPerformed
@@ -137,6 +145,11 @@ public class GestionHabitats extends javax.swing.JFrame {
         Mod.main();
         setVisible(false);
     }//GEN-LAST:event_btn_modificarActionPerformed
+
+    private void btn_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eliminarActionPerformed
+        // TODO add your handling code here:
+        Data.HabitatsDataDelete();
+    }//GEN-LAST:event_btn_eliminarActionPerformed
 
     /**
      * @param args the command line arguments

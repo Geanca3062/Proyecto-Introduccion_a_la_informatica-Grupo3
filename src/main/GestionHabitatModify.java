@@ -72,8 +72,13 @@ public class GestionHabitatModify extends javax.swing.JFrame {
         });
 
         btn_Back.setText("Volver");
+        btn_Back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_BackActionPerformed(evt);
+            }
+        });
 
-        jLabel5.setText("ID");
+        jLabel5.setText("ID de habitat a modificar");
 
         tf_ID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -167,6 +172,13 @@ public class GestionHabitatModify extends javax.swing.JFrame {
         
         Data.HabitatsDataModify(Nombre, TipoH, Capacidad, ID);
     }//GEN-LAST:event_btn_ModificarActionPerformed
+
+    private void btn_BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_BackActionPerformed
+        // TODO add your handling code here:
+        GestionHabitats menu = new GestionHabitats();
+        menu.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_BackActionPerformed
 
     /**
      * @param args the command line arguments
