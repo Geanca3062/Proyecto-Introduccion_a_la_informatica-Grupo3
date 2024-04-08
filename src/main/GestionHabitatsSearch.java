@@ -66,6 +66,7 @@ public class GestionHabitatsSearch extends javax.swing.JFrame {
         jLabel1.setText("Zoologico Internacional - Gestion de Habitats [Buscar]");
         jLabel1.setName("lvl_ZoologicoInternacional"); // NOI18N
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel3.setText("Buscar por:");
 
         jLabel4.setText("Nombre");

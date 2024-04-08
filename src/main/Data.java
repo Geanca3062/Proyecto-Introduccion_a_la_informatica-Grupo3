@@ -151,6 +151,10 @@ public class Data {
             }
         }
     }
+    
+    public static void AnimalesDataSearch(String Searching, int type) {
+        
+    }
 
     public static void HabitatsData(String Nombre, String TipoH, String Capacidad, String CantActual) {
         Habitads[habitatsAdd][0] = Nombre;
