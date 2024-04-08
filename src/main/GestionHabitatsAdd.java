@@ -147,11 +147,19 @@ public class GestionHabitatsAdd extends javax.swing.JFrame {
 
     private void btn_CargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CargarActionPerformed
         // TODO add your handling code here:
-        String Nombre = tf_NombreHabitat.getText();
-        String TipoH = tf_TipoHabitat.getText();
-        String Capacidad = tf_Capacidad.getText();
-        String CantAct = "0";
-        Data.HabitatsData(Nombre, TipoH, Capacidad, CantAct);
+        if (tf_NombreHabitat.getText().isBlank() || tf_TipoHabitat.getText().isBlank() || tf_Capacidad.getText().isBlank()) {
+
+        } else {
+            String Nombre = tf_NombreHabitat.getText();
+            String TipoH = tf_TipoHabitat.getText();
+            String Capacidad = tf_Capacidad.getText();
+            String CantAct = "0";
+            Data.HabitatsData(Nombre, TipoH, Capacidad, CantAct);
+            tf_NombreHabitat.setText("");
+            tf_TipoHabitat.setText("");
+            tf_Capacidad.setText("");
+        }
+
     }//GEN-LAST:event_btn_CargarActionPerformed
 
     /**

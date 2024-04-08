@@ -168,7 +168,7 @@ public class GestionHabitatModify extends javax.swing.JFrame {
         String Nombre = tf_NombreHabitat.getText();
         String TipoH = tf_TipoHabitat.getText();
         String Capacidad = tf_Capacidad.getText();
-        int ID = Integer.parseInt(tf_ID.getText());
+        String ID = tf_ID.getText();
         
         Data.HabitatsDataModify(Nombre, TipoH, Capacidad, ID);
     }//GEN-LAST:event_btn_ModificarActionPerformed

@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  */
 public class Data {
 
-    static String[][] Animales = new String[100][6]; // 0)NombreID 1)Especie 2)Edad 3)Habitat 4)HabitatID 5)AnimalID
+    static String[][] Animales = new String[100][6]; // 0)Nombre 1)Especie 2)Edad 3)Habitat 4)HabitatID 5)AnimalID
     static int animalesAdd = 0;
     static int animalesID = 0;
     static String[][] Habitads = new String[100][5]; // 0)Nombre 1)TipoDeHambiente 2)CapacidadTot 3)CapacidadAct 4)HabitatID
@@ -57,6 +57,7 @@ public class Data {
                     Animales[animalesAdd][5] = String.valueOf(animalesID);
 
                     Habitads[x][3] = String.valueOf((CantActual + 1));
+                    JOptionPane.showMessageDialog(null, "Datos agregados correctamente");
                     animalesAdd += 1;
                     animalesID += 1;
                 }
@@ -91,7 +92,7 @@ public class Data {
             String ID = Animales[x][5]; //ID del animal
             String HabitatID = Animales[x][4]; //ID del habitat donde esta el animal
             if (deleteID.equals(ID)) {// Busca el habitat con el mismo ID
-                for (int y = x; y < animalesAdd; y++) {
+                for (int y = x; y <= animalesAdd; y++) {
                     Animales[y][0] = Animales[(y + 1)][0]; //Nombre
                     Animales[y][1] = Animales[(y + 1)][1]; // Especie
                     Animales[y][2] = Animales[(y + 1)][2]; //Edad
@@ -102,20 +103,52 @@ public class Data {
                 }
                 x -= 1;
                 animalesAdd -= 1;
-                
-                int CantActual = Integer.parseInt(Habitads[x][3]);
-                for (int z = 0; z < habitatsAdd; z++){
+                for (int z = 0; z < habitatsAdd; z++) {
                     ID = Habitads[z][4];
-
-                    
-                    
+                    if (HabitatID.equals(ID)) {
+                        int CantActual = Integer.parseInt(Habitads[z][3]); //Cantidad actual de animales en el habitat
+                        Habitads[z][3] = String.valueOf((CantActual - 1));
+                    }
                 }
-                //Habitads[x][3] = String.valueOf((CantActual - 1));
+                //Habitads[z][3] = String.valueOf((CantActual - 1));
                 JOptionPane.showMessageDialog(null, "Datos eliminados correctamente");
             }
         }
         if (find == false) {
             JOptionPane.showMessageDialog(null, "Dato no encontrado");
+        }
+    }
+
+    public static void AnimalesDataModify(String Nombre, String Especie, String Edad, String HabitatID, String AnimalID) { //0)Nombre 1)Especie 2)Edad 3)Habitat 4)HabitatID 5)AnimalID
+        for (int x = 0; x < animalesAdd; x++) {                                                                            // 0)Nombre 1)TipoDeHambiente 2)CapacidadTot 3)CapacidadAct 4)HabitatID
+            String ID = Animales[x][5]; //Se confirma el ID del animal a modificar
+            if (AnimalID.equals(ID)) {
+                String habitat = Animales[x][4]; //INdica el ID del habitat donde vive el animal en estos momentos
+                if (HabitatID.equals(habitat)) {// Verifica si el animal se mantiene en el mismo habitat
+                    Animales[x][0] = Nombre;
+                    Animales[x][1] = Especie;
+                    Animales[x][2] = Edad;
+                    JOptionPane.showMessageDialog(null, "Datos modificados correctamente");
+                } else {//Si el animal se cambia de habitat, se verifica si hay espacio en el nuevo
+                    for (int y = 0; y < habitatsAdd; y++) {
+                        ID = Habitads[y][4];
+                        if (HabitatID.equals(ID)) {//Se busca el nuevo habitat
+                            int CantActual = Integer.parseInt(Habitads[y][3]);
+                            int CantTot = Integer.parseInt(Habitads[y][2]);
+                            if (CantActual >= CantTot) { //Verifica si esta lleno, si no esta lleno, carga los datos del animal
+                                JOptionPane.showMessageDialog(null, "El nuevo habitat seleccionado esta lleno");
+                            } else {
+                                Animales[x][0] = Nombre;
+                                Animales[x][1] = Especie;
+                                Animales[x][2] = Edad;
+                                Animales[x][3] = Habitads[y][0]; //Nombre del habitat
+                                Animales[x][4] = HabitatID;
+                                JOptionPane.showMessageDialog(null, "Datos modificados correctamente");
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -140,12 +173,26 @@ public class Data {
         habitatsID += 1;
     }
 
-    public static void HabitatsDataModify(String Nombre, String TipoH, String Capacidad, int ID) {
-        Habitads[ID][0] = Nombre;
-        Habitads[ID][1] = TipoH;
-        Habitads[ID][2] = Capacidad;
-        JOptionPane.showMessageDialog(null, "Datos agregados correctamente");
+    public static void HabitatsDataModify(String Nombre, String TipoH, String Capacidad, String SearchingID) {
+        for (int x = 0; x < habitatsAdd; x++) {
+            String ID = Habitads[x][4];
+            if (SearchingID.equals(ID)) {
+                int CantActual = Integer.parseInt(Habitads[x][3]); //Cantidad actual de animales
+                int newCap = Integer.parseInt(Capacidad); //Nueva capacidad de animales
+                if (newCap < CantActual) {
+                    JOptionPane.showMessageDialog(null, "La nueva capacidad es menor a la cantidad de animales actuales, no se pudo modificar la data");
+                } else {
+                    Habitads[x][0] = Nombre;
+                    Habitads[x][1] = TipoH;
+                    Habitads[x][2] = Capacidad;
+                    JOptionPane.showMessageDialog(null, "Datos modificados correctamente");
+                }
 
+            }
+        }
+
+
+        /*
         System.out.println(Habitads[ID][0]);
         System.out.println(Habitads[ID][1]);
         System.out.println(Habitads[ID][2]);
@@ -153,6 +200,7 @@ public class Data {
         System.out.println(Habitads[ID][4]);
         System.out.println("-----------------------");
         System.out.println("-----------------------");
+         */
     }
 
     public static void HabitatsDataSearch(String Searching, int type) { // Types: 1Nombre)  2)Habitad  3)ID // 0)Nombre 1)TipoDeHambiente 2)CapacidadTot 3)CapacidadAct 4)HabitatID

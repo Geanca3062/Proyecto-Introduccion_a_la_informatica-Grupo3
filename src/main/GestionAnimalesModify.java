@@ -10,12 +10,12 @@ import javax.swing.JOptionPane;
  *
  * @author gean3
  */
-public class GestionAnimalesAdd extends javax.swing.JFrame {
+public class GestionAnimalesModify extends javax.swing.JFrame {
 
     /**
-     * Creates new form GestionAnimalesAdd
+     * Creates new form GestionAnimalesModify
      */
-    public GestionAnimalesAdd() {
+    public GestionAnimalesModify() {
         initComponents();
     }
 
@@ -29,32 +29,36 @@ public class GestionAnimalesAdd extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        tf_NombreID = new javax.swing.JTextField();
+        tf_Nombre = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         tf_Especie = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         tf_Edad = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         tf_HabitatID = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        tf_AnimalID = new javax.swing.JTextField();
         btn_Back = new javax.swing.JButton();
-        btn_Cargar = new javax.swing.JButton();
+        btn_Modificar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setText("Zoologico Internacional - Gestion de animales [Añadir]");
+        jLabel1.setText("Zoologico Internacional - Gestion de animales [Modificar]");
         jLabel1.setName("lvl_ZoologicoInternacional"); // NOI18N
 
-        jLabel2.setText("Nombre");
-
-        tf_NombreID.setToolTipText("");
+        tf_Nombre.setToolTipText("");
 
         jLabel3.setText("Especie");
 
         jLabel4.setText("Edad");
 
         jLabel5.setText("Habitat ID");
+
+        jLabel2.setText("Nombre");
+
+        jLabel6.setText("ID de animal a modificar");
 
         btn_Back.setText("Volver");
         btn_Back.addActionListener(new java.awt.event.ActionListener() {
@@ -63,10 +67,10 @@ public class GestionAnimalesAdd extends javax.swing.JFrame {
             }
         });
 
-        btn_Cargar.setText("Añadir");
-        btn_Cargar.addActionListener(new java.awt.event.ActionListener() {
+        btn_Modificar.setText("Modificar");
+        btn_Modificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_CargarActionPerformed(evt);
+                btn_ModificarActionPerformed(evt);
             }
         });
 
@@ -77,11 +81,11 @@ public class GestionAnimalesAdd extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 562, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel2)
-                            .addComponent(tf_NombreID, javax.swing.GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE)
+                            .addComponent(tf_Nombre)
                             .addComponent(jLabel3)
                             .addComponent(tf_Especie)
                             .addGroup(layout.createSequentialGroup()
@@ -91,12 +95,14 @@ public class GestionAnimalesAdd extends javax.swing.JFrame {
                                 .addGap(25, 25, 25)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel5)
-                                    .addComponent(tf_HabitatID))))
-                        .addGap(18, 18, 18)
+                                    .addComponent(tf_HabitatID, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel6)
+                            .addComponent(tf_AnimalID, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btn_Cargar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btn_Back, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                            .addComponent(btn_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
+                            .addComponent(btn_Modificar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 559, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -104,18 +110,16 @@ public class GestionAnimalesAdd extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(tf_NombreID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btn_Cargar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btn_Back)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tf_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_Modificar))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(btn_Back))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tf_Especie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -126,10 +130,12 @@ public class GestionAnimalesAdd extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tf_Edad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tf_HabitatID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addGap(24, 24, 24)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tf_AnimalID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
-
-        jLabel2.getAccessibleContext().setAccessibleName("Nombre");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -141,23 +147,25 @@ public class GestionAnimalesAdd extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btn_BackActionPerformed
 
-    private void btn_CargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CargarActionPerformed
+    private void btn_ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ModificarActionPerformed
         // TODO add your handling code here:
-        if (tf_NombreID.getText().isBlank() || tf_Especie.getText().isBlank() || tf_Edad.getText().isBlank() || tf_HabitatID.getText().isBlank()) {
+        if (tf_Nombre.getText().isBlank() || tf_Especie.getText().isBlank() || tf_Edad.getText().isBlank() || tf_HabitatID.getText().isBlank() || tf_AnimalID.getText().isBlank()) {
             JOptionPane.showMessageDialog(null, "Falta informacion por agregar");
         } else {
-            String Nombre = tf_NombreID.getText();
+            String Nombre = tf_Nombre.getText();
             String Especie = tf_Especie.getText();
             String Edad = tf_Edad.getText();
-            String Habitat = tf_HabitatID.getText();
-            Data.AnimalesData(Nombre, Especie, Edad, Habitat);
-            tf_NombreID.setText("");
+            String HabitatID = tf_HabitatID.getText();
+            String AnimalID = tf_AnimalID.getText();
+            Data.AnimalesDataModify(Nombre, Especie, Edad, HabitatID, AnimalID);
+            tf_Nombre.setText("");
             tf_Especie.setText("");
             tf_Edad.setText("");
-            tf_HabitatID.setText("");       
+            tf_HabitatID.setText(""); 
+            tf_AnimalID.setText(""); 
         }
-
-    }//GEN-LAST:event_btn_CargarActionPerformed
+        //Data.AnimalesDataModify();
+    }//GEN-LAST:event_btn_ModificarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -176,35 +184,36 @@ public class GestionAnimalesAdd extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GestionAnimalesAdd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GestionAnimalesModify.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GestionAnimalesAdd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GestionAnimalesModify.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GestionAnimalesAdd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GestionAnimalesModify.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GestionAnimalesAdd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GestionAnimalesModify.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
-        /* Create and display the form */
+/*tf_Nombre Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GestionAnimalesAdd().setVisible(true);
+                new GestionAnimalesModify().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_Back;
-    private javax.swing.JButton btn_Cargar;
+    private javax.swing.JButton btn_Modificar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JTextField tf_AnimalID;
     private javax.swing.JTextField tf_Edad;
     private javax.swing.JTextField tf_Especie;
     private javax.swing.JTextField tf_HabitatID;
-    private javax.swing.JTextField tf_NombreID;
+    private javax.swing.JTextField tf_Nombre;
     // End of variables declaration//GEN-END:variables
 }
