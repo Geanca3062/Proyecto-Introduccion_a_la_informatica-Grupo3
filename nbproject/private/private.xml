@@ -3,14 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Trabajos/Fidelitas/IntroProgra/Proyecto/Main/src/main/MainMenuTest.java</file>
             <file>file:/D:/Trabajos/Fidelitas/IntroProgra/Proyecto/Main/src/main/MainMenu.java</file>
             <file>file:/D:/Trabajos/Fidelitas/IntroProgra/Proyecto/Main/src/main/Data.java</file>
+            <file>file:/D:/Trabajos/Fidelitas/IntroProgra/Proyecto/Main/src/main/GestionAnimalesModify.java</file>
             <file>file:/D:/Trabajos/Fidelitas/IntroProgra/Proyecto/Main/src/main/GestionHabitatsAdd.java</file>
             <file>file:/D:/Trabajos/Fidelitas/IntroProgra/Proyecto/Main/src/main/GestionAnimales.java</file>
             <file>file:/D:/Trabajos/Fidelitas/IntroProgra/Proyecto/Main/src/main/GestionAnimalesAdd.java</file>
             <file>file:/D:/Trabajos/Fidelitas/IntroProgra/Proyecto/Main/src/main/GestionHabitatModify.java</file>
+            <file>file:/D:/Trabajos/Fidelitas/IntroProgra/Proyecto/Main/src/main/GestionHabitatsSearch.java</file>
             <file>file:/D:/Trabajos/Fidelitas/IntroProgra/Proyecto/Main/src/main/GestionHabitats.java</file>
+            <file>file:/D:/Trabajos/Fidelitas/IntroProgra/Proyecto/Main/src/main/GestionAnimalesSearch.java</file>
         </group>
     </open-files>
 </project-private>

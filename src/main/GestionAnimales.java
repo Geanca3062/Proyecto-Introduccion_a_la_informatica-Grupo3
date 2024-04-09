@@ -119,6 +119,9 @@ public class GestionAnimales extends javax.swing.JFrame {
 
     private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
         // TODO add your handling code here:
+        GestionAnimalesSearch Search = new GestionAnimalesSearch();
+        Search.main();
+        setVisible(false);
     }//GEN-LAST:event_btn_buscarActionPerformed
 
     private void btn_aniadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_aniadirActionPerformed

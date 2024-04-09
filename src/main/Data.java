@@ -153,7 +153,59 @@ public class Data {
     }
     
     public static void AnimalesDataSearch(String Searching, int type) {
-        
+        String Display = "";
+        for (int x = 0; x < animalesAdd; x++) {//0)Nombre 1)Especie 2)Edad 3)Habitat 4)HabitatID 5)AnimalID
+            switch (type) {
+                case 1:
+                    String Name = Animales[x][0];
+                    if (Searching.equals(Name)) {
+                        Display += "Nombre: " + Animales[x][0] + "\nEspecie: " + Animales[x][1] + "\nEdad: " + Animales[x][2] + "\nHabitat: " + Animales[x][3] +  "\nAnimal ID: " + Animales[x][5];
+                        Display += "\n-----------------------\n";
+                    }
+                    break;
+                case 2:
+                    String Especie = Animales[x][1];
+                    if (Searching.equals(Especie)) {
+                        Display += "Nombre: " + Animales[x][0] + "\nEspecie: " + Animales[x][1] + "\nEdad: " + Animales[x][2] + "\nHabitat: " + Animales[x][3] +  "\nAnimal ID: " + Animales[x][5];
+                        Display += "\n-----------------------\n";
+                    }
+                    break;
+                case 3:
+                    String Edad = Animales[x][2];
+                    if (Searching.equals(Edad)) {
+                        Display += "Nombre: " + Animales[x][0] + "\nEspecie: " + Animales[x][1] + "\nEdad: " + Animales[x][2] + "\nHabitat: " + Animales[x][3] +  "\nAnimal ID: " + Animales[x][5];
+                        Display += "\n-----------------------\n";
+                    }
+                    break;
+                case 4:
+                    String HabitatName = Animales[x][3];
+                    if (Searching.equals(HabitatName)) {
+                        Display += "Nombre: " + Animales[x][0] + "\nEspecie: " + Animales[x][1] + "\nEdad: " + Animales[x][2] + "\nHabitat: " + Animales[x][3] +  "\nAnimal ID: " + Animales[x][5];
+                        Display += "\n-----------------------\n";
+                    }
+                    break;
+                case 5:
+                    String HabitatID = Animales[x][4];
+                    if (Searching.equals(HabitatID)) {
+                        Display += "Nombre: " + Animales[x][0] + "\nEspecie: " + Animales[x][1] + "\nEdad: " + Animales[x][2] + "\nHabitat: " + Animales[x][3] +  "\nAnimal ID: " + Animales[x][5];
+                        Display += "\n-----------------------\n";
+                    }
+                    break;
+                case 6:
+                    String AnimalID = Animales[x][5];
+                    if (Searching.equals(AnimalID)) {
+                        Display += "Nombre: " + Animales[x][0] + "\nEspecie: " + Animales[x][1] + "\nEdad: " + Animales[x][2] + "\nHabitat: " + Animales[x][3] +  "\nAnimal ID: " + Animales[x][5];
+                        Display += "\n-----------------------\n";
+                    }
+                    break;
+                default:
+                    throw new AssertionError();
+            }
+        }
+        if (Display.equals("")) {
+            Display = "No se han encontrado datos";
+        }
+        JOptionPane.showMessageDialog(null, Display);
     }
 
     public static void HabitatsData(String Nombre, String TipoH, String Capacidad, String CantActual) {

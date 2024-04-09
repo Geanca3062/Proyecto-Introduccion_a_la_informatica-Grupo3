@@ -118,7 +118,7 @@ public class GestionAnimalesSearch extends javax.swing.JFrame {
             }
         });
 
-        jLabel8.setText("Habitat-Tipo:");
+        jLabel8.setText("Nombre del habitat:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -278,7 +278,7 @@ public class GestionAnimalesSearch extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main() {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
