@@ -69,6 +69,11 @@ public class MainMenu extends javax.swing.JFrame {
 
         btn_GestionDeAlimentacion.setText("Gestión de Alimentación");
         btn_GestionDeAlimentacion.setName("btn_GestionDeAlimentacion"); // NOI18N
+        btn_GestionDeAlimentacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_GestionDeAlimentacionActionPerformed(evt);
+            }
+        });
 
         btn_Mapa.setText("Mapa");
         btn_Mapa.setName("btn_Mapa"); // NOI18N
@@ -148,6 +153,13 @@ public class MainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_btn_SalirActionPerformed
+
+    private void btn_GestionDeAlimentacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_GestionDeAlimentacionActionPerformed
+        // TODO add your handling code here:
+        GestionAlimentacion gestionAlimentacion = new GestionAlimentacion();
+        gestionAlimentacion.main();
+        setVisible(false);
+    }//GEN-LAST:event_btn_GestionDeAlimentacionActionPerformed
 
     /**
      * @param args the command line arguments

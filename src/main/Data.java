@@ -17,7 +17,10 @@ public class Data {
     static int animalesID = 0;
     static String[][] Habitads = new String[100][5]; // 0)Nombre 1)TipoDeHambiente 2)CapacidadTot 3)CapacidadAct 4)HabitatID
     static int habitatsAdd = 0;
+    static int GestionAdd = 0;
     static int habitatsID = 0;
+    
+    static String[][] GestionAlimentacion = new String[100][4];
 
     public static void DefauldDataAnimales(String Nombre, String Especie, String Edad) {
         Animales[animalesAdd][0] = Nombre;
@@ -318,6 +321,26 @@ public class Data {
             JOptionPane.showMessageDialog(null, "Dato no encontrado");
         }
 
+    }
+    public static void GestionAlimentacionData(String Id_Animal, String Horario, String Frecuencia, String Alimentos) {
+        GestionAlimentacion[GestionAdd][0] = Id_Animal;
+        GestionAlimentacion[GestionAdd][1] = Horario;
+        GestionAlimentacion[GestionAdd][2] = Frecuencia;
+        GestionAlimentacion[GestionAdd][3] = Alimentos;
+        String AnimalNombre = "";
+        for (int i = 0; i <= GestionAdd; i++) {
+            for (var animal : Animales) {
+                if (animal[5] == GestionAlimentacion[i][0]) {
+                    AnimalNombre = animal[0];
+                }
+            }
+            String mensaje = "Animal: " + AnimalNombre + "\n"
+                    + "Horario: " + GestionAlimentacion[i][1] + "\n"
+                    + "Frecuencia: " + GestionAlimentacion[i][2] + "\n"
+                    + "Alimentos: " + GestionAlimentacion[i][3];
+            JOptionPane.showMessageDialog(null, mensaje);
+        }
+        GestionAdd++;
     }
 
 }
