@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  */
 public class Data {
 
-    static String[][] Animales = new String[100][6]; // 0)Nombre 1)Especie 2)Edad 3)Habitat 4)HabitatID 5)AnimalID
+    static String[][] Animales = new String[100][6]; // 0)Nombre 1)Especie 2)Edad 3)Habitat 4)HabitatID 5)AnimalID ...
     static int animalesAdd = 0;
     static int animalesID = 0;
     static String[][] Habitads = new String[100][5]; // 0)Nombre 1)TipoDeHambiente 2)CapacidadTot 3)CapacidadAct 4)HabitatID
