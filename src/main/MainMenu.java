@@ -63,6 +63,11 @@ public class MainMenu extends javax.swing.JFrame {
 
         btn_RegistroDeEventos.setText("Registro de Eventos");
         btn_RegistroDeEventos.setName("btn_RegistroDeEventos"); // NOI18N
+        btn_RegistroDeEventos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_RegistroDeEventosActionPerformed(evt);
+            }
+        });
 
         btn_RegistroDeVisitantes.setText("Registro de Visitantes");
         btn_RegistroDeVisitantes.setName("btn_RegistroDeVisitantes"); // NOI18N
@@ -77,6 +82,11 @@ public class MainMenu extends javax.swing.JFrame {
 
         btn_Mapa.setText("Mapa");
         btn_Mapa.setName("btn_Mapa"); // NOI18N
+        btn_Mapa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_MapaActionPerformed(evt);
+            }
+        });
 
         btn_Salir.setText("Salir");
         btn_Salir.setName("btn_Mapa"); // NOI18N
@@ -160,6 +170,19 @@ public class MainMenu extends javax.swing.JFrame {
         gestionAlimentacion.main();
         setVisible(false);
     }//GEN-LAST:event_btn_GestionDeAlimentacionActionPerformed
+
+    private void btn_RegistroDeEventosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegistroDeEventosActionPerformed
+        // TODO add your handling code here:
+        Evento.main();
+    }//GEN-LAST:event_btn_RegistroDeEventosActionPerformed
+
+    private void btn_MapaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_MapaActionPerformed
+        // TODO add your handling code here:
+        Mapa mapa = new Mapa();
+        mapa.main();
+        setVisible(false);
+        
+    }//GEN-LAST:event_btn_MapaActionPerformed
 
     /**
      * @param args the command line arguments

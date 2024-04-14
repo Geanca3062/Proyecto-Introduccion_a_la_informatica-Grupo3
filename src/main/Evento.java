@@ -1,4 +1,4 @@
-package modulo4;
+package main;
 import java.util.Scanner;
 
 public class Evento {
@@ -36,7 +36,7 @@ public class Evento {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Ingrese la cantidad maxima de eventos que puede haber:");
         int maxEventos = scanner.nextInt();
