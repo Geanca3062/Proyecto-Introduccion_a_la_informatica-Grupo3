@@ -4,17 +4,22 @@
  */
 package main;
 
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author gean3
  */
 public class Mapa extends javax.swing.JFrame {
+    DefaultTableModel modelo = new DefaultTableModel();
 
     /**
      * Creates new form Mapa
      */
     public Mapa() {
         initComponents();
+        modelo = (DefaultTableModel)TableMapa.getModel();
+        CargaMapa(Data.Habitads, Data.habitatsAdd);
     }
 
     /**
@@ -27,22 +32,37 @@ public class Mapa extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TableMapa = new javax.swing.JTable();
+        btn_Back = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TableMapa.setAutoCreateRowSorter(true);
+        TableMapa.setBackground(new java.awt.Color(0, 153, 153));
+        TableMapa.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 6, 2, 6, new java.awt.Color(51, 51, 51)));
+        TableMapa.setFont(new java.awt.Font("Microsoft YaHei Light", 0, 14)); // NOI18N
+        TableMapa.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Entrada", "", "Salida"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        TableMapa.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jScrollPane1.setViewportView(TableMapa);
+
+        btn_Back.setText("Volver");
+        btn_Back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_BackActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setText("Zoologico Internacional - Mapa");
+        jLabel1.setName("lvl_ZoologicoInternacional"); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -50,24 +70,60 @@ public class Mapa extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(313, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 375, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btn_Back, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 375, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(80, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_Back, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btn_BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_BackActionPerformed
+        // TODO add your handling code here:
+        MainMenu menu = new MainMenu();
+        menu.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_BackActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main() {
+    
+    private void CargaMapa(String Habitat[][], int HabitatsAdd){ // 0)Nombre 1)TipoDeHambiente 2)CapacidadTot 3)CapacidadAct 4)HabitatID
+        //Object[] newRow = {Habitat[0][0], Habitat[1][0], Habitat[2][0]};
+        //modelo.addRow(newRow);
+        int cont = 0;
+        String Add[] = new String[3];
+        for (int x = 0; x < HabitatsAdd; x++){
+            Add[cont] = Habitat[x][0];
+            cont++;
+            if (cont >= 3 || x >= HabitatsAdd - 1){
+                modelo.addRow(Add);
+                cont = 0;
+                for(int y = 0; y < 3; y++){
+                    Add[y] = "";
+                }
+            }
+        }
+    }
+    
+    public void main() {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -100,7 +156,9 @@ public class Mapa extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable TableMapa;
+    private javax.swing.JButton btn_Back;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
