@@ -4,6 +4,8 @@
  */
 package main;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author gean3
@@ -148,7 +150,7 @@ public class GestionHabitatsAdd extends javax.swing.JFrame {
     private void btn_CargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CargarActionPerformed
         // TODO add your handling code here:
         if (tf_NombreHabitat.getText().isBlank() || tf_TipoHabitat.getText().isBlank() || tf_Capacidad.getText().isBlank()) {
-
+            JOptionPane.showMessageDialog(null, "Falta informacion por agregar");
         } else {
             String Nombre = tf_NombreHabitat.getText();
             String TipoH = tf_TipoHabitat.getText();

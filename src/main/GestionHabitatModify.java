@@ -4,6 +4,8 @@
  */
 package main;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author gean3
@@ -165,12 +167,21 @@ public class GestionHabitatModify extends javax.swing.JFrame {
 
     private void btn_ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ModificarActionPerformed
         // TODO add your handling code here:
-        String Nombre = tf_NombreHabitat.getText();
-        String TipoH = tf_TipoHabitat.getText();
-        String Capacidad = tf_Capacidad.getText();
-        String ID = tf_ID.getText();
-        
-        Data.HabitatsDataModify(Nombre, TipoH, Capacidad, ID);
+        if (tf_NombreHabitat.getText().isBlank() || tf_TipoHabitat.getText().isBlank() || tf_Capacidad.getText().isBlank() || tf_ID.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Falta informacion por agregar");
+        } else {
+            String Nombre = tf_NombreHabitat.getText();
+            String TipoH = tf_TipoHabitat.getText();
+            String Capacidad = tf_Capacidad.getText();
+            String ID = tf_ID.getText();
+            Data.HabitatsDataModify(Nombre, TipoH, Capacidad, ID);
+            tf_NombreHabitat.setText("");
+            tf_TipoHabitat.setText("");
+            tf_Capacidad.setText("");
+            tf_ID.setText("");
+        }
+
+
     }//GEN-LAST:event_btn_ModificarActionPerformed
 
     private void btn_BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_BackActionPerformed
