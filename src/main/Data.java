@@ -20,6 +20,8 @@ public class Data {
     static int habitatsID = 0;
     static String[][] GestionAlimentacion = new String[100][4];
     static int GestionAdd = 0;
+    static String[][] eventos;
+    static int cantidadEventos;
 
     public static void DefauldDataAnimales(String Nombre, String Especie, String Edad) {
         Animales[animalesAdd][0] = Nombre;
@@ -84,7 +86,7 @@ public class Data {
         System.out.println(Animales[0][3]);
         System.out.println("-----------------------");
         System.out.println("-----------------------");
-        */
+         */
     }
 
     public static void AnimalesDataDelete() {
@@ -229,7 +231,7 @@ public class Data {
         System.out.println("-----------------------");
         habitatsAdd += 1;
         habitatsID += 1;
-        */
+         */
     }
 
     public static void HabitatsDataModify(String Nombre, String TipoH, String Capacidad, String SearchingID) {
@@ -344,4 +346,16 @@ public class Data {
         GestionAdd++;
     }
 
+    public static void EventoData(String CantidadEvento, String NombreEvento, String DescripcionEvento, String LugarEvento, String FechaHoraEvento) {
+        if (cantidadEventos < eventos.length) {
+            eventos[cantidadEventos][0] = NombreEvento;
+            eventos[cantidadEventos][1] = DescripcionEvento;
+            eventos[cantidadEventos][2] = LugarEvento;
+            eventos[cantidadEventos][3] = FechaHoraEvento;
+            cantidadEventos++;
+            JOptionPane.showMessageDialog(null, "Datos agregados correctamente");
+        } else {
+            JOptionPane.showMessageDialog(null, "No se pueden agregar más eventos. La capacidad máxima ha sido alcanzada.");
+        }
+    }
 }
