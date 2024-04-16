@@ -219,7 +219,7 @@ public class Data {
         JOptionPane.showMessageDialog(null, "Datos agregados correctamente");
         //habitatsAdd += 1;
         //habitatsID += 1;
-
+        /*
         System.out.println(Habitads[habitatsAdd][0]);
         System.out.println(Habitads[habitatsAdd][1]);
         System.out.println(Habitads[habitatsAdd][2]);
@@ -229,6 +229,7 @@ public class Data {
         System.out.println("-----------------------");
         habitatsAdd += 1;
         habitatsID += 1;
+        */
     }
 
     public static void HabitatsDataModify(String Nombre, String TipoH, String Capacidad, String SearchingID) {
