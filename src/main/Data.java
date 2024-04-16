@@ -66,6 +66,7 @@ public class Data {
             }
         }
 
+        /*
         //animalesAdd += 1;
         //animalesID += 1;
         System.out.println(Animales[animalesAdd - 1][0]);
@@ -81,10 +82,9 @@ public class Data {
         System.out.println(Animales[0][1]);
         System.out.println(Animales[0][2]);
         System.out.println(Animales[0][3]);
-         */
         System.out.println("-----------------------");
         System.out.println("-----------------------");
-
+        */
     }
 
     public static void AnimalesDataDelete() {
