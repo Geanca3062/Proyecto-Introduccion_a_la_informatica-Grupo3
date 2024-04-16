@@ -154,7 +154,7 @@ public class GestionEventos extends javax.swing.JFrame {
 
     private void BotonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonGuardarActionPerformed
         // TODO add your handling code here:
-        if (tf_NombreEvento.getText().isBlank() || tf_DescripcionEvento.getText().isBlank() || tf_LugarEvento.getText().isBlank() || tf_FechaHoraEvento.getText().isBlank()) {
+                if (tf_NombreEvento.getText().isBlank() || tf_DescripcionEvento.getText().isBlank() || tf_LugarEvento.getText().isBlank() || tf_FechaHoraEvento.getText().isBlank()) {
             JOptionPane.showMessageDialog(null, "Falta informacion por agregar");
         } else {
             String NombreEvento = tf_NombreEvento.getText();
