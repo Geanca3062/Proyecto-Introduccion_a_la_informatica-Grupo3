@@ -6,7 +6,6 @@ package main;
 
 import javax.swing.JOptionPane;
 
-
 /**
  *
  * @author esteb
@@ -18,15 +17,14 @@ public class GestionAlimentacion extends javax.swing.JFrame {
      */
     public GestionAlimentacion() {
         initComponents();
-       
-   
-       for(String[] animal :Data.Animales) {
+
+        for (String[] animal : Data.Animales) {
 //               JOptionPane.showMessageDialog(null,animal[0] );
-               if(animal.length>0){
-               input_animales.addItem(animal[0]);
-               }
-    }
-        
+            if (animal.length > 0) {
+                input_animales.addItem(animal[0]);
+            }
+        }
+
     }
 
     /**
@@ -144,20 +142,20 @@ public class GestionAlimentacion extends javax.swing.JFrame {
 
     private void btn_registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registrarActionPerformed
         // TODO add your handling code here:
-       
+
         if (input_animales.getSelectedItem().equals("")) {
             JOptionPane.showMessageDialog(null, "Debes seleccionar un animal para continuar",
                     "Advertencia", JOptionPane.WARNING_MESSAGE);
         } else if (input_horario.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Debes llenar el horario para continuar",
                     "Advertencia", JOptionPane.WARNING_MESSAGE);
-        }else if (input_alimentos.getText().equals("")) {
+        } else if (input_alimentos.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Debes llenar el alimentos para continuar",
                     "Advertencia", JOptionPane.WARNING_MESSAGE);
         } else if (input_frecuencia.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Debes llenar la frecuencia para continuar",
                     "Advertencia", JOptionPane.WARNING_MESSAGE);
-        }   else {
+        } else {
             String Id_Animal = "0";
             for (String[] animal : Data.Animales) {
                 if (animal[0] == input_animales.getSelectedItem()) {
@@ -165,16 +163,16 @@ public class GestionAlimentacion extends javax.swing.JFrame {
                 }
             }
             Data.GestionAlimentacionData(Id_Animal, input_horario.getText(), input_frecuencia.getText(), input_alimentos.getText());
-          
+
         }
     }//GEN-LAST:event_btn_registrarActionPerformed
 
     private void btn_atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_atrasActionPerformed
         // TODO add your handling code here:
-     MainMenu menu = new MainMenu();
-         dispose();
+        MainMenu menu = new MainMenu();
+        dispose();
         menu.setVisible(true);
-        
+
     }//GEN-LAST:event_btn_atrasActionPerformed
 
     /**
@@ -253,7 +251,7 @@ public class GestionAlimentacion extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new GestionAlimentacion().setVisible(true);
-                
+
             }
         });
     }
