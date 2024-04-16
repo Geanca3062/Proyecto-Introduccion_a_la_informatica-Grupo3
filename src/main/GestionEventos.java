@@ -31,13 +31,11 @@ public class GestionEventos extends javax.swing.JFrame {
         btn_Back = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         tf_NombreEvento = new javax.swing.JTextField();
         tf_DescripcionEvento = new javax.swing.JTextField();
         tf_LugarEvento = new javax.swing.JTextField();
-        tf_CantidadEvento = new javax.swing.JTextField();
         tf_FechaHoraEvento = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         BotonGuardar = new javax.swing.JButton();
@@ -57,8 +55,6 @@ public class GestionEventos extends javax.swing.JFrame {
 
         jLabel6.setText("Ingrese la fecha y hora del evento");
 
-        jLabel2.setText("Ingrese la cantidad maxima de eventos que puede haber");
-
         jLabel3.setText("Ingrese el nombre del evento");
 
         jLabel4.setText("Ingrese la descripción del evento");
@@ -68,8 +64,6 @@ public class GestionEventos extends javax.swing.JFrame {
         tf_DescripcionEvento.setToolTipText("");
 
         tf_LugarEvento.setToolTipText("");
-
-        tf_CantidadEvento.setToolTipText("");
 
         tf_FechaHoraEvento.setToolTipText("");
 
@@ -86,41 +80,33 @@ public class GestionEventos extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(BotonGuardar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btn_Back, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 615, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 615, Short.MAX_VALUE)
+                        .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel2)
                                 .addComponent(jLabel3)
                                 .addComponent(jLabel4)
                                 .addComponent(jLabel6)
                                 .addComponent(tf_NombreEvento)
                                 .addComponent(tf_DescripcionEvento)
                                 .addComponent(tf_LugarEvento)
-                                .addComponent(tf_FechaHoraEvento)
-                                .addComponent(tf_CantidadEvento, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                                .addComponent(tf_FechaHoraEvento, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(BotonGuardar))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_Back, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(21, 21, 21))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tf_CantidadEvento, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -137,15 +123,11 @@ public class GestionEventos extends javax.swing.JFrame {
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tf_FechaHoraEvento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_Back)
-                        .addGap(17, 17, 17))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(BotonGuardar)
-                        .addContainerGap(29, Short.MAX_VALUE))))
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BotonGuardar)
+                    .addComponent(btn_Back))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         pack();
@@ -160,18 +142,18 @@ public class GestionEventos extends javax.swing.JFrame {
 
     private void BotonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonGuardarActionPerformed
         // TODO add your handling code here:
-                if (tf_CantidadEvento.getText().isBlank() || tf_NombreEvento.getText().isBlank() || tf_DescripcionEvento.getText().isBlank()) {
+                if (tf_NombreEvento.getText().isBlank() || tf_DescripcionEvento.getText().isBlank() || tf_LugarEvento.getText().isBlank() || tf_FechaHoraEvento.getText().isBlank()) {
             JOptionPane.showMessageDialog(null, "Falta informacion por agregar");
         } else {
-            String CantidadEvento = tf_CantidadEvento.getText();
             String NombreEvento = tf_NombreEvento.getText();
             String DescripcionEvento = tf_DescripcionEvento.getText();
             String LugarEvento = tf_LugarEvento.getText();
             String FechaHoraEvento = tf_FechaHoraEvento.getText();
-            Data.EventoData(CantidadEvento, NombreEvento, DescripcionEvento, LugarEvento, FechaHoraEvento);
-            tf_CantidadEvento.setText("");
+            Data.EventoData(NombreEvento, DescripcionEvento, LugarEvento, FechaHoraEvento);
             tf_NombreEvento.setText("");
             tf_DescripcionEvento.setText("");
+            tf_LugarEvento.setText("");
+            tf_FechaHoraEvento.setText("");
         }
     }//GEN-LAST:event_BotonGuardarActionPerformed
 
@@ -217,12 +199,10 @@ public class GestionEventos extends javax.swing.JFrame {
     private javax.swing.JButton BotonGuardar;
     private javax.swing.JButton btn_Back;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField tf_CantidadEvento;
     private javax.swing.JTextField tf_DescripcionEvento;
     private javax.swing.JTextField tf_FechaHoraEvento;
     private javax.swing.JTextField tf_LugarEvento;
