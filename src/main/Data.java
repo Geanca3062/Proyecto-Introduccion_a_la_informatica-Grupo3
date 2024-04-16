@@ -355,4 +355,13 @@ public class Data {
         JOptionPane.showMessageDialog(null, "Datos agregados correctamente");
 
     }
+
+    public static void MostrarEvento() {
+        String Mostrar = "";
+        for (int x = 0; x < cantidadEventos; x++) {
+            Mostrar += "Nombre Evento: " + eventos[x][0] + "\nDescripcion Evento: " + eventos[x][1] + "\nLugar Evento: " + eventos[x][2] + "\nFecha y Hora: " + eventos[x][3];
+            Mostrar += "\n-----------------------\n";
+        }
+        JOptionPane.showMessageDialog(null, Mostrar);
+    }
 }

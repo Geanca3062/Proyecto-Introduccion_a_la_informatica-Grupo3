@@ -42,7 +42,11 @@
                               <Component id="tf_LugarEvento" alignment="0" max="32767" attributes="0"/>
                               <Component id="tf_FechaHoraEvento" alignment="0" min="-2" pref="302" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="BotonGuardar" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="BotonGuardar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="BotonMostrarEvento" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="btn_Back" min="-2" pref="124" max="-2" attributes="0"/>
@@ -77,6 +81,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="BotonGuardar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btn_Back" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BotonMostrarEvento" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="16" max="32767" attributes="0"/>
           </Group>
@@ -147,6 +152,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonGuardarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="BotonMostrarEvento">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Mostrar Eventos"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonMostrarEventoActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

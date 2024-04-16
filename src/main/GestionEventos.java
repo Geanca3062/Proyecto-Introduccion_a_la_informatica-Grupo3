@@ -39,6 +39,7 @@ public class GestionEventos extends javax.swing.JFrame {
         tf_FechaHoraEvento = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         BotonGuardar = new javax.swing.JButton();
+        BotonMostrarEvento = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,6 +77,13 @@ public class GestionEventos extends javax.swing.JFrame {
             }
         });
 
+        BotonMostrarEvento.setText("Mostrar Eventos");
+        BotonMostrarEvento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonMostrarEventoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -97,7 +105,10 @@ public class GestionEventos extends javax.swing.JFrame {
                                 .addComponent(tf_DescripcionEvento)
                                 .addComponent(tf_LugarEvento)
                                 .addComponent(tf_FechaHoraEvento, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(BotonGuardar))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(BotonGuardar)
+                                .addGap(18, 18, 18)
+                                .addComponent(BotonMostrarEvento)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btn_Back, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(21, 21, 21))))
@@ -126,7 +137,8 @@ public class GestionEventos extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BotonGuardar)
-                    .addComponent(btn_Back))
+                    .addComponent(btn_Back)
+                    .addComponent(BotonMostrarEvento))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
@@ -156,6 +168,11 @@ public class GestionEventos extends javax.swing.JFrame {
             tf_FechaHoraEvento.setText("");
         }
     }//GEN-LAST:event_BotonGuardarActionPerformed
+
+    private void BotonMostrarEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonMostrarEventoActionPerformed
+        // TODO add your handling code here:
+        Data.MostrarEvento();
+    }//GEN-LAST:event_BotonMostrarEventoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -197,6 +214,7 @@ public class GestionEventos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonGuardar;
+    private javax.swing.JButton BotonMostrarEvento;
     private javax.swing.JButton btn_Back;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
