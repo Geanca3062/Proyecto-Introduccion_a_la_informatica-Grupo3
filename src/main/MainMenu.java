@@ -173,7 +173,7 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void btn_RegistroDeEventosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegistroDeEventosActionPerformed
         // TODO add your handling code here:
-        GestionEventos Evento = new GestionEventos();
+        GestionEventosBase Evento = new GestionEventosBase();
         Evento.main();
         setVisible(false);
     }//GEN-LAST:event_btn_RegistroDeEventosActionPerformed
