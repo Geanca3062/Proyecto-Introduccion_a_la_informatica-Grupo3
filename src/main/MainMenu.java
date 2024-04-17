@@ -71,6 +71,11 @@ public class MainMenu extends javax.swing.JFrame {
 
         btn_RegistroDeVisitantes.setText("Registro de Visitantes");
         btn_RegistroDeVisitantes.setName("btn_RegistroDeVisitantes"); // NOI18N
+        btn_RegistroDeVisitantes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_RegistroDeVisitantesActionPerformed(evt);
+            }
+        });
 
         btn_GestionDeAlimentacion.setText("Gestión de Alimentación");
         btn_GestionDeAlimentacion.setName("btn_GestionDeAlimentacion"); // NOI18N
@@ -185,6 +190,13 @@ public class MainMenu extends javax.swing.JFrame {
         setVisible(false);
         
     }//GEN-LAST:event_btn_MapaActionPerformed
+
+    private void btn_RegistroDeVisitantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegistroDeVisitantesActionPerformed
+        // TODO add your handling code here:
+        GestionVisitates Visitantes = new GestionVisitates();
+        Visitantes.main();
+        setVisible(false);
+    }//GEN-LAST:event_btn_RegistroDeVisitantesActionPerformed
 
     /**
      * @param args the command line arguments
