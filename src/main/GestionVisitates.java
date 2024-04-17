@@ -16,6 +16,7 @@ public class GestionVisitates extends javax.swing.JFrame {
     private Object textFieldNombre;
     private Object textFieldEdad;
     private int contador;
+    private Object textAreaRegistro;
 
     /**
      * Creates new form GestionVisitates
