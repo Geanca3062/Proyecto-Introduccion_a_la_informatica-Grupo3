@@ -219,8 +219,8 @@ public class Data {
         Habitads[habitatsAdd][3] = CantActual;
         Habitads[habitatsAdd][4] = String.valueOf(habitatsID); //ID
         JOptionPane.showMessageDialog(null, "Datos agregados correctamente");
-        //habitatsAdd += 1;
-        //habitatsID += 1;
+        habitatsAdd += 1;
+        habitatsID += 1;
         /*
         System.out.println(Habitads[habitatsAdd][0]);
         System.out.println(Habitads[habitatsAdd][1]);
